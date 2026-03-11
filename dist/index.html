@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel Center Hub</title>
+
+
+<style>
+/* Partners Section Styles */
+.platforms{
+	text-align:center;
+	padding:70px 20px;
+	background:#f7f9fc;
+	width:100vw;
+	max-width:none;
+	margin-left:calc(-50vw + 50%);
+	margin-right:calc(-50vw + 50%);
+}
+
+.platform-grid{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 40px 0;
+	margin: 40px auto 0 auto;
+	width: 100%;
+}
+@media (min-width: 901px) {
+	.platform {
+		width: 33.33%;
+		max-width: 400px;
+		box-sizing: border-box;
+		margin: 0 auto 40px auto;
+	}
+}
+
+@media (max-width: 900px) {
+	.platform {
+		width: 48%;
+		max-width: 100%;
+		margin: 0 auto 30px auto;
+	}
+}
+
+@media (max-width: 600px) {
+	.platform {
+		width: 100%;
+		margin: 0 auto 20px auto;
+	}
+}
+
+.platform{
+	background:white;
+	padding:25px;
+	border-radius:10px;
+	box-shadow:0 4px 12px rgba(0,0,0,0.1);
+	text-align:center;
+}
+
+.platform img{
+	width:150px;
+	height:150px;
+	object-fit:cover;
+	margin-bottom:15px;
+}
+
+.platform h3{
+	margin:10px 0;
+}
+
+.platform a{
+	display:inline-block;
+	margin-top:10px;
+	background:#ff9900;
+	color:white;
+	padding:10px 20px;
+	border-radius:6px;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.platform a:hover{
+	background:#e68900;
+}
+.footer{
+	background:#0b3d91;
+	color:white;
+	padding:50px 20px 30px;
+}
+
+.footer-container{
+	max-width:1100px;
+	margin:auto;
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr;
+	gap:40px;
+}
+
+.footer h3{
+	margin-top:0;
+	margin-bottom:15px;
+	font-size:16px;
+}
+
+.footer-links a{
+	display:block;
+	color:white;
+	text-decoration:none;
+	margin-bottom:8px;
+	font-size:14px;
+}
+
+.footer-links a:hover{
+	text-decoration:underline;
+}
+
+.footer-support p{
+	margin:6px 0;
+	font-size:14px;
+}
+
+.footer-note{
+	font-size:13px;
+	line-height:1.4;
+}
+
+.footer-bottom{
+	margin-top:30px;
+	border-top:1px solid rgba(255,255,255,0.3);
+	padding-top:15px;
+	font-size:13px;
+	text-align:center;
+	width:100%;
+}
+
+.footer-bottom p{
+	margin:6px 0;
+	text-align:center;
+}
+.footer-bottom p {
+	margin: 8px 0 0 0;
+	padding: 0;
+	text-align: center;
+}
+.html{
+	scroll-behavior:smooth;
+}
+.partners{
+    padding:70px 20px;
+    background:white;
+    text-align:center;
+}
+
+.partners h2{
+    margin-bottom:10px;
+}
+
+.partners p{
+    color:#666;
+    margin-bottom:40px;
+}
+
+.partner-logos{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+}
+
+.partner-logos img{
+	height:80px;
+    opacity:0.8;
+    transition:0.3s;
+}
+
+.partner-logos img:hover{
+    opacity:1;
+}
+
+@media (max-width: 700px) {
+	header, .section, .destinations, .membership {
+		padding: 20px 5px;
+	}
+	.header-grid {
+		grid-template-columns: 1fr;
+		text-align: center;
+		gap: 10px;
+	}
+	.logo-left img, .logo-right video {
+		height: 40px;
+	}
+	nav {
+		padding: 8px 2px;
+		font-size: 15px;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+	nav a {
+		margin: 0 8px;
+		display: inline-block;
+	}
+	.hero {
+		padding: 50px 10px;
+		font-size: 16px;
+	}
+	.cards {
+		grid-template-columns: 1fr;
+		gap: 18px;
+		margin: 30px auto;
+	}
+	.destination-grid {
+		flex-direction: column;
+		gap: 18px;
+	}
+	.membership-grid {
+		grid-template-columns: 1fr;
+		gap: 18px;
+	}
+	.partner-logos {
+		gap: 18px;
+		flex-direction: column;
+		align-items: center;
+	}
+	.partner-logos img {
+		height: 50px;
+		max-width: 90vw;
+	}
+	h1, h2, h3 {
+		font-size: 1.2em;
+	}
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+}
+
+header{
+background:#0b3d91;
+color:white;
+padding:40px 20px 50px 20px;
+min-height:140px;
+}
+
+.header-grid{
+display:grid;
+grid-template-columns: 1fr 2fr 1fr;
+align-items:center;
+max-width:1300px;
+margin:auto;
+column-gap: 60px;
+}
+
+.header-text{
+text-align:center;
+}
+
+.header-text h1{
+margin:0;
+font-size:44px;
+}
+
+.header-text p{
+margin:10px 0 0 0;
+font-size:16px;
+}
+
+.logo-left img{
+height:140px;
+max-width:140px;
+margin:auto;
+}
+
+.logo-right video{
+height:140px;
+max-width:140px;
+display:block;
+margin:auto;
+}
+
+nav{
+background:#082a63;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 18px;
+font-weight:bold;
+}
+
+.hero{
+background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero button{
+background:#ff9900;
+border:none;
+padding:16px 40px;
+font-size:18px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.section{
+text-align:center;
+padding:60px 20px;
+}
+
+.section a{
+display:inline-block;
+margin-top:15px;
+color:#0b3d91;
+font-weight:bold;
+}
+
+.cards{
+	display:grid;
+	grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+	gap:30px;
+	max-width:1200px;
+	margin:60px auto;
+	padding:0 20px;
+}
+
+.card{
+	background:white;
+	padding:25px;
+	border-radius:8px;
+	box-shadow:0 3px 10px rgba(0,0,0,0.1);
+	text-align:center;
+	min-height:150px;
+}
+.card:hover{
+transform:translateY(-5px);
+transition:0.3s;
+}
+
+.card a{
+display:inline-block;
+margin-top:10px;
+font-weight:bold;
+color:#0b3d91;
+}
+
+
+/* Destinations Section */
+.destinations{
+	text-align:center;
+	padding:70px 20px;
+	background:white;
+	max-width:1100px;
+	margin:auto;
+	border-radius:8px;
+}
+
+.destinations h2{
+margin-bottom:40px;
+}
+
+.destination-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.destination{
+width:200px;
+cursor:pointer;
+}
+
+.destination img{
+	width:100%;
+	height:120px;
+	object-fit:cover;
+	border-radius:8px;
+	box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+
+.destination p{
+	margin-top:10px;
+	font-weight:bold;
+}
+
+/* Membership Section Styles */
+.membership{
+	padding:80px 20px;
+	background:#f7f9fc;
+	text-align:center;
+}
+
+.membership h2{
+	font-size:28px;
+	margin-bottom:10px;
+}
+
+.membership-intro{
+	max-width:700px;
+	margin:auto;
+	margin-bottom:50px;
+	color:#555;
+}
+
+.membership-grid{
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+	gap:30px;
+	max-width:1200px;
+	margin:auto;
+}
+
+.plan{
+	background:white;
+	padding:30px;
+	border-radius:10px;
+	box-shadow:0 5px 18px rgba(0,0,0,0.1);
+	text-align:left;
+	position:relative;
+}
+
+.plan h3{
+	margin-top:0;
+}
+
+.plan h4{
+	color:#0b3d91;
+	margin:10px 0;
+}
+
+.plan ul{
+	padding-left:18px;
+	margin-bottom:25px;
+}
+
+.plan li{
+	margin-bottom:8px;
+	font-size:14px;
+}
+
+.subscribe-btn{
+	display:block;
+	text-align:center;
+	background:#ff9900;
+	color:white;
+	padding:12px;
+	border-radius:6px;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.subscribe-btn:hover{
+	background:#e68900;
+}
+
+.popular{
+	border:3px solid #0b3d91;
+}
+
+.badge{
+	position:absolute;
+	top:-12px;
+	left:50%;
+	transform:translateX(-50%);
+	background:#0b3d91;
+	color:white;
+	padding:6px 12px;
+	font-size:12px;
+	border-radius:20px;
+}
+
+.savings{
+	color:#777;
+	font-size:13px;
+	margin-bottom:10px;
+}
+
+.site-info{
+	max-width:900px;
+	margin:80px auto;
+	padding:0 20px;
+	line-height:1.6;
+}
+
+.site-info h2{
+	margin-top:50px;
+	color:#0b3d91;
+}
+
+
+.footer{
+	background:#0b3d91;
+	color:white;
+	padding:50px 20px;
+	margin-top:80px;
+}
+
+.footer-container{
+	max-width:1200px;
+	margin:auto;
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr;
+	gap:40px;
+}
+
+.footer h3{
+	margin-top:0;
+	margin-bottom:15px;
+}
+
+.footer-links a{
+	display:block;
+	color:white;
+	text-decoration:none;
+	margin-bottom:8px;
+	font-size:14px;
+}
+
+.footer-links a:hover{
+	text-decoration:underline;
+}
+
+.footer-contact p{
+	margin:6px 0;
+	font-size:14px;
+}
+
+.footer-legal{
+	grid-column:1 / -1;
+	margin-top:20px;
+	border-top:1px solid rgba(255,255,255,0.3);
+	padding-top:15px;
+	font-size:13px;
+	text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header-grid">
+
+<div class="logo-left">
+<img src="https://res.cloudinary.com/do26xsbby/image/upload/v1741043085/Vacation_ssxgmn.png">
+</div>
+
+<div class="header-text">
+<h1>Travel Center Hub</h1>
+<p>Your gateway to flights, hotels, cruises, car rentals and travel experiences</p>
+</div>
+
+<div class="logo-right">
+<video autoplay muted loop playsinline>
+<source src="https://res.cloudinary.com/do26xsbby/video/upload/v1748190208/Discoverer_Logo_lkxor3.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+
+
+</header>
+<div style="height:2px;width:100%;background:linear-gradient(90deg,#e0e6ef 0%,#bfc9db 100%);margin-bottom:8px;"></div>
+
+<nav>
+<a href="#hero">Home</a>
+<a href="#flights">Flights</a>
+<a href="#hotels">Hotels</a>
+<a href="#cars">Car Rentals</a>
+<a href="#cruises">Cruises</a>
+<a href="#packages">Packages</a>
+<a href="#experiences">Experiences</a>
+<a href="#membership">Membership</a>
+<a href="#partners">Travel Partners</a>
+</nav>
+
+
+<div class="hero" id="hero">
+	<h2>Plan Your Next Adventure</h2>
+	<p>Search flights, hotels, cruises, car rentals and vacation experiences worldwide.</p>
+	<br>
+	<a href="https://globaltravel.airfareassist.com/agentsearch?cmp=GT20038250&lang=en&curr=usd">
+		<button>Search Flights</button>
+	</a>
+</div>
+
+<div class="destinations">
+	<h2>Top Destinations</h2>
+	<div class="destination-grid">
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/435b3fac5a4dd3890d65274c9efe4408?w=600&h=400&fit=fill&q=80">
+			<p>Paris</p>
+		</div>
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/10b3ce4b1adb90758b0c33e5395adb12?w=600&h=400&fit=fill&q=80">
+			<p>Cancun</p>
+		</div>
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/b8e0f4a7a9ee74e4aa8ca0927528fcec?w=600&h=400&fit=fill&q=80">
+			<p>Dubai</p>
+		</div>
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/bb8f86e43d3c31a9a8efd7093f1440b0?w=600&h=400&fit=fill&q=80">
+			<p>Tokyo</p>
+		</div>
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/f5bb556824cdf1dad4cb81b23a878edd?w=600&h=400&fit=fill&q=80">
+			<p>Bali</p>
+		</div>
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/4a05126785773bf85ee8f6e86167e1e6?w=600&h=400&fit=fill&q=80">
+			<p>New York</p>
+		</div>
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/910d4f12308a94c90102ec5d2e069bb8?w=600&h=400&fit=fill&q=80">
+			<p>Las Vegas</p>
+		</div>
+		<div class="destination">
+			<img src="https://mediahost.app/api/media/serve/7686a6c9e10c9170a9f91481b349d0e3?w=600&h=400&fit=fill&q=80">
+			<p>Miami</p>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<h2>Our Services</h2>
+</div>
+<div class="cards">
+	<div class="card">
+		<h3>Flights</h3>
+		<p>Compare airline fares worldwide.</p>
+		<a href="https://globaltravel.airfareassist.com/agentsearch?cmp=GT20038250&lang=en&curr=usd">Search Flights</a>
+	</div>
+	<div class="card" id="flights">
+		<h3>Hotels</h3>
+		<p>Find hotels and resorts anywhere.</p>
+		<a href="https://resmax.globaltravel.net/?custom1=GT20038250&custom2=resmax">Find Hotels</a>
+	</div>
+	<div class="card" id="hotels">
+		<h3>Car Rentals</h3>
+		<p>Rent cars from major brands.</p>
+		<a href="https://rezervco.carhire-solutions.com/?smarket=US&CURRENCY=USD">Search Cars</a>
+	</div>
+	<div class="card" id="cars">
+		<h3>Cruises</h3>
+		<p>Explore cruise vacations worldwide.</p>
+		<a href="https://res.globaltravel.com/app/0/cruise/0/search.html?clear=all&cmp=GT20038250&lang=en&curr=usd&customer_parameters[gtiPin]=GT20038250">Search Cruises</a>
+	</div>
+	<div class="card" id="cruises">
+		<h3>Vacation Packages</h3>
+		<p>Bundle flights and hotels together.</p>
+		<a href="https://www.funjet.com/?plcode=10623900">View Packages</a>
+	</div>
+	<div class="card" id="packages">
+		<h3>Experiences</h3>
+		<p>Discover tours and attractions.</p>
+		<a href="https://p00220289.partner.viator.com/">Browse Experiences</a>
+	</div>
+	<div class="card" id="experiences">
+		<h3>Shore Excursions</h3>
+		<p>Excursions at cruise destinations.</p>
+		<a href="https://www.shoreexcursionsgroup.com/v/a/gti/">View Excursions</a>
+	</div>
+	<div class="card">
+		<h3>City Discoverer</h3>
+		<p>Explore curated city experiences.</p>
+		<a href="https://citydiscoverer.guide/">Explore Cities</a>
+	</div>
+</div>
+
+
+<div class="membership" id="membership">
+	<img src="https://mediahost.app/api/media/serve/ee3c42c3d8d5a22972889d206e5305a7?w=150&h=150&fit=fill&q=80" alt="Membership Logo" class="membership-logo">
+	<h2>Choose Your Explorer Pass</h2>
+
+<p class="membership-intro">
+Unlock unlimited AI-powered city discovery with personalized itineraries,
+insider recommendations, and premium travel services.
+</p>
+
+<div class="membership-grid">
+
+<div class="plan">
+
+<h3>Monthly Explorer Pass</h3>
+
+<h4>$9.99/month</h4>
+
+<ul>
+<li>Unlimited monthly itinerary generations</li>
+<li>Full revision and customization capabilities</li>
+<li>Priority AI processing</li>
+<li>Advanced personalization</li>
+<li>Export itineraries to PDF</li>
+<li>Detailed activity recommendations</li>
+<li>Real-time local insights</li>
+<li>Discounted flights & hotels</li>
+<li>Free group travel logistics planning</li>
+</ul>
+
+<a href="#" class="subscribe-btn">Subscribe Now</a>
+
+</div>
+
+
+
+<div class="plan popular">
+
+<div class="badge">Most Popular</div>
+
+<h3>Yearly Explorer Pass</h3>
+
+<h4>$99/year</h4>
+
+<p class="savings">$119.88 value</p>
+
+<ul>
+<li>All monthly benefits included</li>
+<li>Unlimited itinerary generations</li>
+<li>Save over 15% annually</li>
+<li>Priority customer support</li>
+<li>Early access to new cities</li>
+<li>Enhanced travel services</li>
+<li>Bonus travel planning tools</li>
+<li>Advanced AI recommendations</li>
+</ul>
+
+<a href="#" class="subscribe-btn">Subscribe Now</a>
+
+</div>
+
+
+
+<div class="plan">
+
+<h3>Lifetime Explorer</h3>
+
+<h4>$499</h4>
+
+<p class="savings">One-time payment</p>
+
+<ul>
+<li>Lifetime unlimited itineraries</li>
+<li>Never pay monthly fees again</li>
+<li>All future cities and features</li>
+<li>Premium support for life</li>
+<li>Advanced AI travel models</li>
+<li>Maximum travel discounts</li>
+<li>Complimentary logistics planning</li>
+<li>Exclusive member travel experiences</li>
+<li>Priority group bookings</li>
+<li>Beta access to new AI features</li>
+</ul>
+
+<a href="#" class="subscribe-btn">Subscribe Now</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="partners" id="partners">
+
+<h2>Trusted Travel Partners</h2>
+
+<p>Travel Center Hub works with trusted global travel suppliers to provide flights, hotels, cruises, tours and vacation packages.</p>
+
+<div class="partner-logos">
+
+
+<img src="https://mediahost.app/api/media/serve/d867f125919454f0f0a9a126e8eaec52?w=120&h=80&fit=contain&q=80" alt="Expedia">
+<img src="https://mediahost.app/api/media/serve/1263373a30c8c4df238379113584bb08?w=120&h=80&fit=contain&q=80" alt="Viator">
+<img src="https://mediahost.app/api/media/serve/ed2e6266da6494fad1ccf83b8de4dd74?w=120&h=80&fit=contain&q=80" alt="Royal Caribbean">
+<img src="https://mediahost.app/api/media/serve/740e14724682ebd0e1314372a92002ea?w=120&h=80&fit=contain&q=80" alt="Carnival">
+<img src="https://mediahost.app/api/media/serve/8132cbed785703a4d5a4b0241a82beb8?w=120&h=80&fit=contain&q=80" alt="Norwegian Cruise Line">
+<img src="https://mediahost.app/api/media/serve/aa992be3d2f07b54fd6ae40845361e40?w=120&h=80&fit=contain&q=80" alt="Disney Cruise Line">
+
+</div>
+
+<div class="platforms">
+
+<h2>Platforms From Our Companies</h2>
+<p>Additional tools and platforms developed by our companies.</p>
+
+<div class="platform-grid">
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/90fd666e19f5cc56af0ef7c4bb2daa08?w=150&h=150&fit=crop&crop=center&q=80" alt="Debt to Legacy">
+<h3>Debt to Legacy</h3>
+<a href="https://debtlegacypath.com/">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/54a2b5c4d26ec18880ade9dbc9ed31b3?w=150&h=150&fit=cover&q=80">
+<h3>City Discoverer Companion</h3>
+<a href="https://apps.apple.com/us/app/city-discoverer-companion/id6759014495">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/7d6b053384bbb28b142498fcd2464566?w=150&h=150&fit=cover&q=80" alt="Letter Vault">
+<h3>Letter Vault</h3>
+<a href="https://lettervault.us/">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/6ccef690b5c58927c168f2967b76b205?w=150&h=150&fit=crop&crop=center&q=80" alt="DIY Debt Defense">
+<h3>DIY Debt Defense</h3>
+<a href="https://diydebt.org/">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/4f197f015dc825cad54b1aa175c26236?w=150&h=150&fit=contain&q=80" alt="FanLore">
+<h3>FanLore</h3>
+<a href="https://fanlore.live/">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/a35c39c9e9e8a4748675f3529c2f8a8a?w=150&h=150&fit=cover&q=80" alt="Itinerary Builder">
+<h3>Itinerary Builder</h3>
+<a href="https://itinerary.citydiscoverer.guide/">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/c3ca52840400ef96737721670d8c3ba1?w=150&h=150&fit=crop&crop=center&q=80" alt="Wealth Watch">
+<h3>Wealth Watch</h3>
+<a href="https://apps.apple.com/us/app/wealth-watch/id6758687724">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/90cbc17524e173bb07e3f51ed3414418?w=150&h=150&fit=crop&crop=center&q=80">
+<h3>StreamPilot</h3>
+<a href="https://apps.apple.com/us/app/streampilot/id6757970417">Explore</a>
+</div>
+
+<div class="platform">
+<img src="https://mediahost.app/api/media/serve/resize_source_1769655306469.png.jpg?w=150&h=150&fit=cover&q=80" alt="WildlifeFilms">
+<h3>WildlifeFilms</h3>
+<a href="https://apps.apple.com/us/app/wildlifefilms/id6758022608">Explore</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="compliance-section" style="background:#f7f9fc;padding:30px 20px;text-align:center;font-size:1.05em;color:#333;border-top:1px solid #e0e6ef;">
+	<strong>Travel Platform Notice</strong><br>
+	Travel Center Hub is a jointly owned travel platform by In City Experience LLC &amp; Expedition America Travel Co LLC.<br>
+	City Discoverer is a brand of Expedition America Travel Co LLC.<br>
+	<span style="font-size:0.97em;color:#666;">Travel services fulfilled through licensed travel partners and suppliers.</span>
+</div>
+
+<div class="site-info" style="background:#fff;padding:40px 20px 30px 20px;margin:0 auto;max-width:900px;font-size:1.08em;color:#222;border-radius:8px 8px 0 0;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+
+<h2 id="about">About Travel Center Hub</h2>
+<p>
+Travel Center Hub is a travel discovery and booking platform jointly owned by
+In City Experience LLC and Expedition America Travel Co LLC. The platform helps
+travelers discover destinations, book travel services, and generate AI-powered
+travel itineraries through City Discoverer tools and partner travel providers.
+</p>
+
+<h2 id="privacy">Privacy Policy</h2>
+<!-- Anchor for Privacy -->
+<p>
+Travel Center Hub respects your privacy. We collect limited information such as
+email addresses, usage analytics, and booking information only when necessary
+to provide travel services and improve the platform. Personal information is
+never sold and is only shared with travel partners when required to complete
+bookings or services.
+</p>
+
+<h2 id="terms">Terms of Use</h2>
+<!-- Anchor for Terms -->
+<p>
+By using Travel Center Hub you agree to use the platform for lawful travel
+planning and booking purposes. Travel services are fulfilled through partner
+travel providers including airlines, hotels, cruise lines, and experience
+operators. Travel Center Hub is not responsible for supplier changes, pricing
+updates, cancellations, or service disruptions.
+</p>
+
+<h2 id="data">Data Usage</h2>
+<!-- Anchor for Data Usage -->
+<p>
+Travel Center Hub may collect usage data including browsing activity,
+destination searches, and itinerary generation interactions. This information
+is used to improve AI travel recommendations, personalize travel planning
+features, and enhance the overall user experience.
+</p>
+
+<h2 id="howto">How to Use the Site</h2>
+<!-- Anchor for How to Use -->
+<p>
+Use the main navigation to search flights, hotels, cruises, vacation packages,
+and travel experiences. The Explorer Pass allows members to generate
+AI-powered travel itineraries and receive personalized travel planning tools.
+Select any service card or destination to begin planning your trip.
+</p>
+
+<h2 id="contact">Contact</h2>
+<!-- Anchor for Contact -->
+<p>
+Travel Center Hub Support<br>
+Phone: 240-664-2270<br>
+Email: support@travelcenterhub.com
+</p>
+
+</div>
+
+</div>
+<footer>
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-links">
+<h3>Information</h3>
+<a href="#about">About</a>
+<a href="#privacy">Privacy Policy</a>
+<a href="#terms">Terms of Use</a>
+<a href="#data">Data Usage</a>
+<a href="#howto">How to Use the Site</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="footer-support">
+<h3>Support</h3>
+<p>Phone: 240-664-2270</p>
+<p>Email: support@travelcenterhub.com</p>
+</div>
+
+<div class="footer-note">
+<p>
+Travel services are fulfilled through trusted travel partners and suppliers.
+</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+</div>
+<div class="footer-bottom">
+
+<p>© 2025 In City Experience LLC & Expedition America Travel Co LLC</p>
+<p>Travel Center Hub is a jointly owned travel platform.</p>
+<p>City Discoverer is a brand of Expedition America Travel Co LLC.</p>
+
+</div>
+</div>
+
+</footer>
+</footer>
+
+</body>
+</html> 

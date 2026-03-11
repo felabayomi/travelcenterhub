@@ -1,0 +1,4 @@
+# Netlify configuration for Vite build output
+[build]
+  publish = "dist"
+  command = "npm run build"
