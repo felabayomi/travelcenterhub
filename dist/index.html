@@ -188,10 +188,27 @@
 	.header-grid {
 		grid-template-columns: 1fr;
 		text-align: center;
-		gap: 10px;
+		gap: 0;
 	}
 	.logo-left img, .logo-right video {
 		height: 40px;
+		width: 60px;
+		max-width: 100%;
+		display: block;
+		margin: 0 auto 8px auto;
+	}
+
+	.header-text h1 {
+		font-size: 1.3em;
+		margin: 8px 0 0 0;
+	}
+	.header-text p {
+		font-size: 0.95em;
+		margin: 6px 0 0 0;
+	}
+	header {
+		padding: 18px 5px 25px 5px;
+		min-height: 80px;
 	}
 	nav {
 		padding: 8px 2px;
@@ -226,8 +243,17 @@
 		align-items: center;
 	}
 	.partner-logos img {
-		height: 50px;
-		max-width: 90vw;
+		height: 140px;
+		max-width: 98vw;
+	}
+	.partner-logos img[alt]::after {
+		display: block;
+		content: attr(alt);
+		font-size: 2.2em;
+		color: #222;
+		margin-top: 8px;
+		text-align: center;
+		font-weight: bold;
 	}
 	h1, h2, h3 {
 		font-size: 1.2em;
@@ -559,7 +585,7 @@ cursor:pointer;
 <div class="header-grid">
 
 <div class="logo-left">
-<img src="https://res.cloudinary.com/do26xsbby/image/upload/v1741043085/Vacation_ssxgmn.png">
+<img src="https://mediahost.app/api/media/serve/a65bfc71a7117510d9bc3bff982e55bc?w=400&h=400&fit=fill&q=80">
 </div>
 
 <div class="header-text">
@@ -715,12 +741,8 @@ insider recommendations, and premium travel services.
 <li>Free group travel logistics planning</li>
 </ul>
 
-<a href="https://buy.stripe.com/cNi5kD2iH6r97Sq8D09oc01"
-   class="subscribe-btn"
-   target="_blank"
-   rel="noopener noreferrer">
-  Subscribe Now
-</a>
+<a href="https://buy.stripe.com/cNi5kD2iH6r97Sq8D09oc01" class="subscribe-btn">Subscribe Now</a>
+
 </div>
 
 
@@ -746,12 +768,7 @@ insider recommendations, and premium travel services.
 <li>Advanced AI recommendations</li>
 </ul>
 
-<a href="https://buy.stripe.com/cNi5kD2iH6r97Sq8D09oc01"
-   class="subscribe-btn"
-   target="_blank"
-   rel="noopener noreferrer">
-  Subscribe Now
-</a>
+<a href="https://buy.stripe.com/eVqaEX5uT02Lc8G7yW9oc02" class="subscribe-btn">Subscribe Now</a>
 
 </div>
 
@@ -778,12 +795,7 @@ insider recommendations, and premium travel services.
 <li>Beta access to new AI features</li>
 </ul>
 
-<a href="https://buy.stripe.com/cNi5kD2iH6r97Sq8D09oc01"
-   class="subscribe-btn"
-   target="_blank"
-   rel="noopener noreferrer">
-  Subscribe Now
-</a>
+<a href="https://buy.stripe.com/9B68wP0azbLtegO9H49oc03" class="subscribe-btn">Subscribe Now</a>
 
 </div>
 
