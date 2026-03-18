@@ -342,6 +342,28 @@ cursor:pointer;
 box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.hero .secondary-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:16px 34px;
+border-radius:6px;
+background:#0b3d91;
+color:white;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.28);
+}
+
 .section{
 text-align:center;
 padding:60px 20px;
@@ -613,6 +635,7 @@ cursor:pointer;
 <a href="#cruises">Cruises</a>
 <a href="#packages">Packages</a>
 <a href="#experiences">Experiences</a>
+<a href="cancun-deal.html">Cancun Deal</a>
 <a href="#membership">Membership</a>
 <a href="#partners">Travel Partners</a>
 </nav>
@@ -622,9 +645,12 @@ cursor:pointer;
 	<h2>Plan Your Next Adventure</h2>
 	<p>Search flights, hotels, cruises, car rentals and vacation experiences worldwide.</p>
 	<br>
-	<a href="https://globaltravel.airfareassist.com/agentsearch?cmp=GT20038250&lang=en&curr=usd">
-		<button>Search Flights</button>
-	</a>
+	<div class="hero-actions">
+		<a href="https://globaltravel.airfareassist.com/agentsearch?cmp=GT20038250&lang=en&curr=usd">
+			<button>Search Flights</button>
+		</a>
+		<a class="secondary-button" href="cancun-deal.html">Cancun Deal</a>
+	</div>
 </div>
 
 <div class="destinations">

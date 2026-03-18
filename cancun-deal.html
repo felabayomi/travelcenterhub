@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cancun All-Inclusive Deal | Travel Center Hub</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #0f172a;
+      background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.25), transparent 32%),
+        linear-gradient(135deg, #d9f6ff 0%, #f5fbff 46%, #dcfce7 100%);
+    }
+
+    .page-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .brand-link,
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .brand-link {
+      color: #0369a1;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+    }
+
+    .home-link {
+      color: #ffffff;
+      background: #0b3d91;
+      box-shadow: 0 12px 30px rgba(11, 61, 145, 0.24);
+    }
+
+    .deal-card {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.18);
+    }
+
+    .deal-hero {
+      position: relative;
+      min-height: 680px;
+      padding: 32px;
+      display: flex;
+      align-items: flex-end;
+      background-image: url('https://images.unsplash.com/photo-1510097467424-192d713fd8b2?auto=format&fit=crop&w=1200&q=80');
+      background-position: center;
+      background-size: cover;
+    }
+
+    .deal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.12) 0%, rgba(15, 23, 42, 0.68) 100%);
+    }
+
+    .hero-badge,
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #0369a1;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    }
+
+    .hero-pill {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(110, 231, 183, 0.92);
+      color: #064e3b;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 0.98;
+    }
+
+    .hero-copy p {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.95);
+      font-size: clamp(1.08rem, 2vw, 1.45rem);
+      font-weight: 600;
+    }
+
+    .deal-details {
+      padding: 42px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .price-card,
+    .booking-card {
+      padding: 28px;
+      border-radius: 28px;
+    }
+
+    .price-card {
+      border: 1px solid #dbeafe;
+      background: #f0f9ff;
+    }
+
+    .eyebrow,
+    .booking-title {
+      margin: 0;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      color: #0284c7;
+    }
+
+    .price-block {
+      margin-top: 18px;
+    }
+
+    .label,
+    .subprice {
+      margin: 0;
+      color: #64748b;
+    }
+
+    .price {
+      margin: 8px 0;
+      font-size: clamp(3.1rem, 5vw, 4.6rem);
+      line-height: 1;
+      font-weight: 900;
+      color: #0f172a;
+    }
+
+    .subprice {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .highlights {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 1px solid #d1fae5;
+      border-radius: 20px;
+      background: #ecfdf5;
+    }
+
+    .checkmark {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #10b981;
+      color: #ffffff;
+      font-weight: 800;
+      box-shadow: 0 10px 18px rgba(16, 185, 129, 0.25);
+    }
+
+    .highlight-item p {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .booking-card {
+      margin-top: 28px;
+      background: #0f172a;
+      color: #ffffff;
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.2);
+    }
+
+    .booking-title {
+      color: #7dd3fc;
+    }
+
+    .booking-card p {
+      margin: 14px 0 0;
+      line-height: 1.7;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .booking-card a {
+      color: #7dd3fc;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .booking-card strong {
+      color: #86efac;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tags span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #475569;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 920px) {
+      .deal-card {
+        grid-template-columns: 1fr;
+      }
+
+      .deal-hero {
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .deal-details,
+      .deal-hero {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="topbar">
+      <a class="brand-link" href="/">Travel Center Hub</a>
+      <a class="home-link" href="/">Back to Home</a>
+    </div>
+
+    <main class="deal-card">
+      <section class="deal-hero" aria-label="Cancun resort image">
+        <div class="hero-badge">Travel Center Hub</div>
+        <div class="hero-copy">
+          <div class="hero-pill">Limited-Time Getaway</div>
+          <h1>Cancun All-Inclusive Deal</h1>
+          <p>5 Nights at Secrets Riviera Cancun</p>
+        </div>
+      </section>
+
+      <section class="deal-details">
+        <div class="price-card">
+          <p class="eyebrow">Flights + Transfers Included</p>
+          <div class="price-block">
+            <p class="label">Starting at</p>
+            <p class="price">$1,999</p>
+            <p class="subprice">per person</p>
+          </div>
+        </div>
+
+        <div class="highlights">
+          <div class="highlight-item">
+            <div class="checkmark">✓</div>
+            <p>Adults Only</p>
+          </div>
+          <div class="highlight-item">
+            <div class="checkmark">✓</div>
+            <p>Unlimited food and drinks</p>
+          </div>
+          <div class="highlight-item">
+            <div class="checkmark">✓</div>
+            <p>Beachfront luxury</p>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <p class="booking-title">Ready to book?</p>
+          <p>
+            Email <a href="mailto:support@travelcenterhub.com?subject=CANCUN">support@travelcenterhub.com</a>
+            with subject <strong>"CANCUN"</strong> to book.
+          </p>
+        </div>
+
+        <div class="tags">
+          <span>Adults Only Escape</span>
+          <span>Luxury Resort</span>
+          <span>Beachfront Stay</span>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
