@@ -264,6 +264,26 @@
       color: #86efac;
     }
 
+    .book-now-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 16px 36px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(239, 68, 68, 0.45);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .book-now-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(239, 68, 68, 0.55);
+    }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -278,6 +298,45 @@
       color: #475569;
       font-size: 0.9rem;
       font-weight: 700;
+    }
+
+    .booking-embed-section {
+      margin-top: 32px;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.14);
+      padding: 40px;
+    }
+
+    .booking-embed-section h2 {
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+      color: #0f172a;
+    }
+
+    .booking-embed-section p {
+      margin: 0 0 28px;
+      color: #64748b;
+      font-size: 1.05rem;
+    }
+
+    .calendar-frame {
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 16px;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .booking-embed-section {
+        padding: 24px 16px;
+        border-radius: 24px;
+      }
+      .calendar-frame {
+        height: 760px;
+      }
     }
 
     @media (max-width: 920px) {
@@ -351,11 +410,9 @@
         </div>
 
         <div class="booking-card">
-          <p class="booking-title">Ready to book?</p>
-          <p>
-            Email <a href="mailto:support@travelcenterhub.com?subject=CANCUN">support@travelcenterhub.com</a>
-            with subject <strong>"CANCUN"</strong> to book.
-          </p>
+          <a class="book-now-btn" href="#appointment-calendar">Book Now</a>
+          <p class="booking-title" style="margin-top:18px;">Ready to Book?</p>
+          <p>Book a free appointment with one of our travel experts below. We'll personalise your Cancun package, answer any questions and lock in your rate.</p>
         </div>
 
         <div class="tags">
@@ -365,6 +422,18 @@
         </div>
       </section>
     </main>
+
+    <div class="booking-embed-section" id="appointment-calendar">
+      <h2>Book Your Free Appointment</h2>
+      <p>Select a time that works for you — our travel expert will walk you through everything and secure your deal.</p>
+      <iframe
+        class="calendar-frame"
+        src="https://appointment.expeditionamerica.us/"
+        title="Book an appointment with Expedition America Travel"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </body>
 </html>
