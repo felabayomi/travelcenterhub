@@ -185,40 +185,52 @@
 	header, .section, .destinations, .membership {
 		padding: 20px 5px;
 	}
+	header {
+		padding: 24px 12px 26px 12px;
+		min-height: 0;
+	}
 	.header-grid {
-		grid-template-columns: 1fr;
-		text-align: center;
-		gap: 0;
+		gap: 12px;
+	}
+	.header-logos {
+		gap: 18px;
 	}
 	.logo-left img, .logo-right video {
-		height: 40px;
-		width: 60px;
-		max-width: 100%;
-		display: block;
-		margin: 0 auto 8px auto;
+		height: 68px;
+		width: 68px;
 	}
-
+	.header-text {
+		max-width: 290px;
+		margin: 0 auto;
+	}
 	.header-text h1 {
-		font-size: 1.3em;
-		margin: 8px 0 0 0;
+		font-size: 3rem;
+		line-height: 1.02;
+		margin: 0;
 	}
 	.header-text p {
-		font-size: 0.95em;
-		margin: 6px 0 0 0;
-	}
-	header {
-		padding: 18px 5px 25px 5px;
-		min-height: 80px;
+		font-size: 1.1rem;
+		line-height: 1.35;
+		margin: 10px 0 0 0;
 	}
 	nav {
-		padding: 8px 2px;
-		font-size: 15px;
+		padding: 10px 8px;
+		font-size: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 8px;
 		overflow-x: auto;
 		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: thin;
 	}
 	nav a {
-		margin: 0 8px;
+		margin: 0;
 		display: inline-block;
+		padding: 8px 12px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.08);
 	}
 	.hero {
 		padding: 50px 10px;
@@ -259,7 +271,6 @@
 		font-size: 1.2em;
 	}
 }
-
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -269,42 +280,57 @@ background:#f4f6f9;
 header{
 background:#0b3d91;
 color:white;
-padding:40px 20px 50px 20px;
+padding:36px 20px 42px 20px;
 min-height:140px;
 }
 
 .header-grid{
-display:grid;
-grid-template-columns: 1fr 2fr 1fr;
+display:flex;
+flex-direction:column;
 align-items:center;
-max-width:1300px;
+justify-content:center;
+max-width:760px;
 margin:auto;
-column-gap: 60px;
+gap:16px;
+}
+
+.header-logos{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:28px;
+}
+
+.logo-left,
+.logo-right{
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 .header-text{
 text-align:center;
+max-width:540px;
 }
 
 .header-text h1{
 margin:0;
-font-size:44px;
+font-size:56px;
+line-height:1.04;
 }
 
 .header-text p{
 margin:10px 0 0 0;
-font-size:16px;
+font-size:20px;
+line-height:1.3;
 }
 
-.logo-left img{
-height:140px;
-max-width:140px;
-margin:auto;
-}
-
+.logo-left img,
 .logo-right video{
-height:140px;
-max-width:140px;
+height:84px;
+width:84px;
+max-width:100%;
+object-fit:contain;
 display:block;
 margin:auto;
 }
@@ -340,6 +366,28 @@ color:white;
 border-radius:6px;
 cursor:pointer;
 box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.hero .secondary-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:16px 34px;
+border-radius:6px;
+background:#0b3d91;
+color:white;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.28);
 }
 
 .section{
@@ -584,19 +632,20 @@ cursor:pointer;
 
 <div class="header-grid">
 
-<div class="logo-left">
-<img src="https://mediahost.app/api/media/serve/a65bfc71a7117510d9bc3bff982e55bc?w=400&h=400&fit=fill&q=80">
+<div class="header-logos">
+	<div class="logo-left">
+		<img src="https://mediahost.app/api/media/serve/a65bfc71a7117510d9bc3bff982e55bc?w=400&h=400&fit=fill&q=80" alt="Global Travel logo">
+	</div>
+	<div class="logo-right">
+		<video autoplay muted loop playsinline>
+			<source src="https://res.cloudinary.com/do26xsbby/video/upload/v1748190208/Discoverer_Logo_lkxor3.mp4" type="video/mp4">
+		</video>
+	</div>
 </div>
 
 <div class="header-text">
-<h1>Travel Center Hub</h1>
-<p>Your gateway to flights, hotels, cruises, car rentals and travel experiences</p>
-</div>
-
-<div class="logo-right">
-<video autoplay muted loop playsinline>
-<source src="https://res.cloudinary.com/do26xsbby/video/upload/v1748190208/Discoverer_Logo_lkxor3.mp4" type="video/mp4">
-</video>
+	<h1>Travel Center Hub</h1>
+	<p>Your gateway to flights, hotels, cruises, car rentals and travel experiences</p>
 </div>
 
 </div>
@@ -613,6 +662,7 @@ cursor:pointer;
 <a href="#cruises">Cruises</a>
 <a href="#packages">Packages</a>
 <a href="#experiences">Experiences</a>
+<a href="cancun-deal.html">Cancun Deal</a>
 <a href="#membership">Membership</a>
 <a href="#partners">Travel Partners</a>
 </nav>
@@ -622,9 +672,12 @@ cursor:pointer;
 	<h2>Plan Your Next Adventure</h2>
 	<p>Search flights, hotels, cruises, car rentals and vacation experiences worldwide.</p>
 	<br>
-	<a href="https://globaltravel.airfareassist.com/agentsearch?cmp=GT20038250&lang=en&curr=usd">
-		<button>Search Flights</button>
-	</a>
+	<div class="hero-actions">
+		<a href="https://globaltravel.airfareassist.com/agentsearch?cmp=GT20038250&lang=en&curr=usd">
+			<button>Search Flights</button>
+		</a>
+		<a class="secondary-button" href="cancun-deal.html">Cancun Deal</a>
+	</div>
 </div>
 
 <div class="destinations">
@@ -951,8 +1004,6 @@ Email: support@travelcenterhub.com
 
 </div>
 
-</div>
-<footer>
 <footer class="footer">
 
 <div class="footer-container">
@@ -990,9 +1041,6 @@ Travel services are fulfilled through trusted travel partners and suppliers.
 <p>City Discoverer is a brand of Expedition America Travel Co LLC.</p>
 
 </div>
-</div>
-
-</footer>
 </footer>
 
 </body>
