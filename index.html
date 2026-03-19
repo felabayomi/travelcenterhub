@@ -181,6 +181,91 @@
     opacity:1;
 }
 
+/* Appointment Section Styles */
+.appointment-section{
+	padding:80px 20px;
+	background:linear-gradient(135deg, #0b3d91 0%, #1a5bb8 100%);
+	color:white;
+	text-align:center;
+	margin:60px 0;
+}
+
+.appointment-section h2{
+	font-size:28px;
+	margin-top:0;
+	margin-bottom:10px;
+}
+
+.appointment-section p{
+	font-size:16px;
+	margin-bottom:30px;
+	opacity:0.95;
+}
+
+.appointment-container{
+	max-width:900px;
+	margin:0 auto;
+	background:rgba(255,255,255,0.1);
+	padding:30px;
+	border-radius:10px;
+	backdrop-filter:blur(10px);
+}
+
+.appointment-iframe-wrapper{
+	position:relative;
+	paddingBottom:66.67%;
+	height:0;
+	overflow:hidden;
+	border-radius:8px;
+	background:#fff;
+	margin-bottom:20px;
+	box-shadow:0 8px 24px rgba(0,0,0,0.2);
+}
+
+.appointment-iframe-wrapper iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	border:none;
+	border-radius:8px;
+}
+
+.appointment-fallback{
+	background:rgba(255,255,255,0.15);
+	padding:30px;
+	border-radius:8px;
+	margin-bottom:20px;
+}
+
+.appointment-fallback a{
+	display:inline-block;
+	background:#ff9900;
+	color:white;
+	padding:12px 30px;
+	border-radius:6px;
+	text-decoration:none;
+	font-weight:bold;
+	margin-top:15px;
+	transition:0.3s;
+}
+
+.appointment-fallback a:hover{
+	background:#e68900;
+}
+
+.appointment-alt{
+	font-size:14px;
+	margin-top:15px;
+	opacity:0.9;
+}
+
+.appointment-alt a{
+	color:#fff;
+	text-decoration:underline;
+}
+
 @media (max-width: 700px) {
 	header, .section, .destinations, .membership {
 		padding: 20px 5px;
@@ -663,6 +748,7 @@ cursor:pointer;
 <a href="#packages">Packages</a>
 <a href="#experiences">Experiences</a>
 <a href="cancun-deal.html">Cancun Deal</a>
+<a href="#appointment">Book Appointment</a>
 <a href="#membership">Membership</a>
 <a href="#partners">Travel Partners</a>
 </nav>
@@ -761,6 +847,23 @@ cursor:pointer;
 		<h3>City Discoverer</h3>
 		<p>Explore curated city experiences.</p>
 		<a href="https://citydiscoverer.guide/">Explore Cities</a>
+	</div>
+</div>
+
+
+<div class="appointment-section" id="appointment">
+	<h2>Book Your Appointment</h2>
+	<p>Schedule your travel consultation with our team of experts</p>
+	
+	<div class="appointment-container">
+		<div class="appointment-iframe-wrapper">
+			<iframe src="https://appointment.expeditionamerica.us/" title="Book Appointment"></iframe>
+		</div>
+		
+		<div class="appointment-fallback">
+			<p>Talk to your travel expert for personalized assistance</p>
+			<a href="https://appointment.expeditionamerica.us/">Book Now</a>
+		</div>
 	</div>
 </div>
 

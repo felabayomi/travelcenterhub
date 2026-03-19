@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import AppointmentSection from '../components/AppointmentSection';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export default function Home() {
         <button onClick={() => navigate('/cruises')} style={buttonStyle}>Explore Cruises</button>
         <button onClick={() => navigate('/vacation-packages')} style={buttonStyle}>Vacation Packages</button>
       </div>
+      <AppointmentSection />
     </div>
   );
 }

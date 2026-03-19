@@ -1,4 +1,6 @@
-export default function Home() {
+import AppointmentSection from '../components/AppointmentSection';
+
+export default function Hotels() {
 
 return (
 
@@ -55,6 +57,10 @@ return (
 <a href="https://citydiscoverer.guide/">
 <button>City Discoverer</button>
 </a>
+
+<br/><br/>
+
+<AppointmentSection />
 
 </div>
 
